@@ -1,0 +1,14 @@
+<h1><%= @student.name %></h1>
+
+Number of courses  enrolled:
+<p><%= @student.course_count %></p>
+
+<%= "#{@student.name}" %>'s Courses:
+
+<% @student.courses.each do |course| %>
+  <li><%= course.name %></li>
+<% end %>
+
+Grade average:
+
+<p><%= @student.grade_average %></p>
