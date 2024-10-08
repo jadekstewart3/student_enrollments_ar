@@ -12,3 +12,9 @@ Number of courses  enrolled:
 Grade average:
 
 <p><%= @student.grade_average %></p>
+
+Teachers:
+
+<% @teachers.each do |teacher| %>
+  <li><%= teacher %></li>
+<% end %>

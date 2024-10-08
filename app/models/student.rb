@@ -9,4 +9,10 @@ class Student < ApplicationRecord
   def grade_average
     courses.average(:grade)
   end
+
+  def student_teachers
+    courses.map do |course|
+      course.teacher.name
+    end
+  end
 end

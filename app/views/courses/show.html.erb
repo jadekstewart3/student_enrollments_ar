@@ -1,0 +1,9 @@
+<h1><%= @course.name %></h1>
+
+<h2>Average Grade:</h2>
+<%= @average %>
+
+<h2>Students below average:</h2>
+<% @students_below_average.each do |student| %>
+  <%= "#{student[:student][:name]}: #{student[:grade]}" %>
+<% end %>

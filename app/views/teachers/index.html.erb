@@ -1,0 +1,12 @@
+<% @teachers.each do |teacher| %>
+  <h2><%= teacher.name %></h2>
+  <p>Room Number:<%= teacher.room_number %></p>
+    <br>
+      Students:
+      <br>
+  <% teacher.courses.each do |course| %>
+    <% course.students.each do |student| %>
+      <li><%= link_to "#{student.name}", student_path(student) %></li>
+    <% end %>
+  <% end %>
+<% end %>

@@ -6,7 +6,7 @@ RSpec.describe "Student show page" do
       @phil = Student.create!(name: "Philip DeFraties")
       @sean = Student.create!(name: "Sean Morris")
       @ms_ruby = Teacher.create!(name: "Miss Ruby", room_number: 9)
-      @ms_conlisk = Teacher.create!(name: "Miss Conlist", room_number: 3)
+      @ms_conlisk = Teacher.create!(name: "Miss Conlisk", room_number: 3)
       art = Course.create!(name: "Art", teacher: @ms_conlisk)
       math = Course.create!(name: "Math", teacher: @ms_ruby)
       geography = Course.create!(name: "Geography", teacher: @ms_ruby)
@@ -17,7 +17,7 @@ RSpec.describe "Student show page" do
     end
 
     describe "When I visity the students show page" do 
-      
+
       it "displays the name of the student" do 
         expect(page).to have_content("Philip DeFraties")
         expect(page).to_not have_content("Sean Morris")
@@ -31,6 +31,10 @@ RSpec.describe "Student show page" do
 
       it "displays the students grade point average" do 
         expect(page).to have_content("92.5")
+      end
+
+      it "displays all of the teachers this student has based on class enrollment" do 
+        expect(page).to have_content("Teachers: Miss Conlisk Miss Ruby")
       end
     end
   end
